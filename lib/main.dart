@@ -1,25 +1,14 @@
 import 'package:flutter/material.dart';
 
-void main() {
-  return runApp(
-      MaterialApp(debugShowCheckedModeBanner: false, home: HomePage()));
-}
+import 'splash_screen.dart';
 
-class HomePage extends StatelessWidget {
+void main() => runApp(new MyApp());
+
+class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      backgroundColor: Colors.white,
-      body: Container(
-        child: Column(
-          children: <Widget>[
-            Container(
-              height: 400,
-              decoration: BoxDecoration(color: Colors.black),
-            )
-          ],
-        ),
-      ),
+    return new MaterialApp(
+      home: SplashScreen(),
     );
   }
 }
