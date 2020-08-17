@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'signup.dart';
+import 'home.dart';
+import 'addReport.dart';
 
-//void main() => runApp(new MyApp());
+//void main() => runApp(new Login());
 
 class Login extends StatelessWidget {
   @override
@@ -10,6 +12,8 @@ class Login extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       routes: <String, WidgetBuilder>{
         '/signup': (BuildContext context) => SignUpPage(),
+        '/home': (BuildContext context) => HomePage(),
+        '/addreport': (BuildContext context) => AddReportPage(),
         //'/splash_screen': (BuildContext context) => Splash_Screen(),
       },
       home: LoginPage(),
@@ -89,7 +93,7 @@ class _LoginPageState extends State<LoginPage> {
                   elevation: 7.0,
                   child: GestureDetector(
                     onTap: () {
-                      Navigator.of(context).pushNamed('/splash_screen');
+                      Navigator.of(context).pushNamed('/home');
                     },
                     child: Center(
                       child: Text(
@@ -135,7 +139,39 @@ class _LoginPageState extends State<LoginPage> {
                     ],
                   ),
                 ),
-              )
+              ),
+              SizedBox(
+                height: 20.0,
+              ),
+              Container(
+                //padding: EdgeInsets.only(left: 10.0,right: 10.0),
+                height: 40.0,
+                color: Colors.transparent,
+                child: Container(
+                  decoration: BoxDecoration(
+                    border: Border.all(
+                      color: Colors.black,
+                      style: BorderStyle.solid,
+                      width: 1.0,
+                    ),
+                    color: Colors.transparent,
+                    borderRadius: BorderRadius.circular(20.0),
+                  ),
+                  child: InkWell(
+                      onTap: () {
+                        Navigator.of(context).pop();
+                      },
+                      child: Center(
+                        child: Text(
+                          "Login as a Guest",
+                          style: TextStyle(
+                            fontFamily: 'Montserrat',
+                            fontWeight: FontWeight.bold,
+                          ),
+                        ),
+                      )),
+                ),
+              ),
             ],
           ),
         ),
@@ -163,7 +199,10 @@ class _LoginPageState extends State<LoginPage> {
               ),
             )
           ],
-        )
+        ),
+        SizedBox(
+          height: 20.0,
+        ),
       ]),
     );
   }

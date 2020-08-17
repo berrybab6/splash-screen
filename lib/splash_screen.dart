@@ -17,7 +17,7 @@ class _SplashScreenState extends State<SplashScreen> {
   }
 
   startTimer() async {
-    var durationn = Duration(seconds: 4);
+    var durationn = Duration(seconds: 3);
     return Timer(durationn, route);
   }
 
@@ -29,32 +29,35 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Container(
+      backgroundColor: Colors.green,
+      body: Center(
         child: Stack(
           alignment: Alignment.center,
           children: <Widget>[
-            Opacity(
+            /* Opacity(
               opacity: 0.5,
               child: Image.asset('assets/images/splash.png'),
-            ),
+            ),*/
             Shimmer.fromColors(
               period: Duration(milliseconds: 1500),
-              baseColor: Color(0xff70f00ff),
-              highlightColor: Color(0xff71f0ff),
+              baseColor: Color(0xFFFFFFFFF),
+              highlightColor: Color(0x0FFFFFFF),
               child: Container(
                 padding: EdgeInsets.all(16.0),
                 child: Text(
                   'Welcome',
                   style: TextStyle(
-                      fontSize: 90.0,
-                      fontFamily: 'Pacifico',
-                      shadows: <Shadow>[
+                    fontWeight: FontWeight.bold,
+                    fontSize: 100.0,
+                    fontFamily: 'Pacifico',
+                    /*shadows: <Shadow>[
                         Shadow(
-                          blurRadius: 15.0,
+                          blurRadius: 10.0,
                           color: Colors.green,
                           offset: Offset.fromDirection(120, 12),
                         ),
-                      ]),
+                      ]*/
+                  ),
                 ),
               ),
             ),
